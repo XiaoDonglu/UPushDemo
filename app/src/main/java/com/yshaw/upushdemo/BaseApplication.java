@@ -32,6 +32,14 @@ public class BaseApplication extends Application {
 
         //获取消息推送代理示例
         PushAgent mPushAgent = PushAgent.getInstance(this);
+        // 如果应用在前台，可以设置不显示通知栏消息
+//        mPushAgent.setNotificaitonOnForeground(false);
+        // 服务端控制声音
+//        mPushAgent.setNotificationPlaySound(MsgConstant.NOTIFICATION_PLAY_SERVER);
+        // 免打扰时间, startHour, startMinute, endHour, endMinute
+//        mPushAgent.setNoDisturbMode(23, 0, 7, 0);
+        // 默认情况下，同一台设备在1分钟内收到同一个应用的多条通知时，不会重复提醒，同时在通知栏里新的通知会替换掉旧的通知。可以通过如下方法来设置冷却时间
+//        mPushAgent.setMuteDurationSeconds(30);
 
         //注册推送服务，每次调用register方法都会回调该接口
         mPushAgent.register(new IUmengRegisterCallback() {
